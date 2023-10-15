@@ -107,3 +107,18 @@ def generator(caption):
     output = get_request(caption, task="generator")
     result_image = base64_to_pil(output)
     return result_image
+
+
+def caption_and_generate(image):
+    """
+    Generate caption from image then re-generate image
+
+    Args:
+        image: input image
+
+    Returns:
+        Generated image
+    """
+    caption = captioner(image)
+    image = generator(caption)
+    return [caption, image]

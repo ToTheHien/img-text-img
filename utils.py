@@ -117,7 +117,7 @@ def caption_and_generate(image):
         image: input image
 
     Returns:
-        Generated image
+        Generated text and image
     """
     caption = captioner(image)
     image = generator(caption)
